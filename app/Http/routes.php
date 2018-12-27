@@ -11,30 +11,29 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/welcome', function () {
+//     return view('welcome');
+// });
 
-Route::auth();
-Route::get('/home', 'HomeController@index');
-//Route::get('/admin', function (){
-//    return view('admin.index');
-//});
+// Route::auth();
+// Route::get('/home', 'HomeController@index');
+// //Route::get('/admin', function (){
+// //    return view('admin.index');
+// //});
 
-Route::group(['middleware'=>'admin'], function (){
-    Route::get('/admin', function () {
-        return view('admin.index');
-    });
-    Route::resource('admin/users','AdminUsersController');
-    Route::resource('admin/posts','AdminPostsController');
-    Route::resource('admin/categories','AdminCategoryController');
-    Route::resource('admin/media','AdminMediasController');
-    Route::resource('admin/comments','PostCommentController');
-    Route::resource('admin/comment/replies','CommentRepliesController');
+// Route::group(['middleware'=>'admin'], function (){
+//     Route::get('/', function () {
+//         return view('admin.index'); });
+//     Route::resource('admin/users','AdminUsersController');
+//     Route::resource('admin/posts','AdminPostsController');
+//     Route::resource('admin/categories','AdminCategoryController');
+//     Route::resource('admin/media','AdminMediasController');
+//     Route::resource('admin/comments','PostCommentController');
+//     Route::resource('admin/comment/replies','CommentRepliesController');
 
-});
-Route::get('/post/{id}',['as'=>'home.post','uses'=>'AdminPostsController@post']);
+// });
+// Route::get('/post/{id}',['as'=>'home.post','uses'=>'AdminPostsController@post']);
 
-Route::group(['middleware'=>'auth'], function () {
-Route::post('comment/reply','CommentRepliesController@createReply');
-});
+// Route::group(['middleware'=>'auth'], function () {
+// Route::post('comment/reply','CommentRepliesController@createReply');
+// });

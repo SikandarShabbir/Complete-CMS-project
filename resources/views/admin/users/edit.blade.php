@@ -2,6 +2,7 @@
     @section('content')
         <h1>Hi! Edit Users</h1>
         <div class="row">
+        @include('includes.form_errors')
             <div class="col-sm-3">
              <img class="img-responsive img-rounded" height="100" src="{{$user->photo ?'/codehacking'. $user->photo->file : 'http://via.placeholder.com/150x150'}}" alt="">
                 {{--<img src="" alt="">--}}
@@ -48,6 +49,5 @@
         </div>
         {{--<img src="../public/images/1532951904myPic.png" alt="">--}}
 
-        @include('includes.form_errors')
     @stop
 

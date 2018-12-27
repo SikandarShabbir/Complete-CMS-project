@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 @section('content')
 
-    <h1> Hello Posts </h1>
-   {{--{{ dd(Auth::user()->posts()->$posts)}}--}}
-    @if($posts)
+    <h1> All Posts </h1>
+   {{-- {{ dd(Auth::user()->posts()->$posts)}} --}}
+    @if(count($posts) > 0)
         <table class="table table-striped">
             <thead>
             <tr>
@@ -36,6 +36,10 @@
             @endforeach
             </tbody>
         </table>
+        @else
+        <h1 class="text-center" style="margin-top: 200px;">
+            <strong>No Posts yet</strong> Create some posts!
+        </h1>
     @endif
     <div class="row">
         <div class="col-sm-6 col-sm-offset-5">

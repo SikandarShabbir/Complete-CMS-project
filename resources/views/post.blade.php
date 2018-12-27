@@ -129,7 +129,7 @@
                                 </div>
                              </div>
                             @else
-                                    <h1 class="text-center">No Replies</h1>
+                                    {{-- <h1 class="text-center">No Replies</h1> --}}
                         <!-- End Nested Comment -->
                         @endif
 

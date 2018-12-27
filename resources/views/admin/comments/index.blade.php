@@ -3,7 +3,7 @@
     {{--<h1>Hello world!</h1>--}}
     @if(count($comments)>0)
 
-    <h1>Hello Comments</h1>
+    <h1>All Comments</h1>
     <table class="table table-striped">
         <thead>
           <tr>
@@ -56,7 +56,7 @@
           </tr>
           @endforeach
             @else
-                <h1 class="text-center">No Comments</h1>
+                <h1 class="text-center" style="margin-top: 200px;"><strong>No Comments</strong> yet -Go to post and give a comment</h1>
         @endif
         </tbody>
       </table>

@@ -2,8 +2,10 @@
 @section('content')
     {{--<h1>Hello world!</h1>--}}
     @if(count($replies)>0)
-
-        <h1>Hello Replies</h1>
+            {{-- {{dd($replies)}} --}}
+            {{-- {{dd($replies->id)}} --}}
+            {{-- {{dd(url('/'))}} --}}
+        <h1>Replies to the post</h1>
         <table class="table table-striped">
             <thead>
             <tr>
@@ -19,7 +21,7 @@
             @foreach($replies as $reply)
                 <tr>
                     <td>{{$reply->id}}</td>
-                    <td><img width="200" src="{{ $reply->photo}}" alt=""></td>
+                    <td><img width="100" height="100" src="{{(url('/').substr($reply->photo, 2))}}" alt="noting"></td>
                     <td>{{$reply->author}}</td>
                     <td>{{$reply->email}}</td>
                     <td>{{$reply->body}}</td>
@@ -53,10 +55,11 @@
                     </td>
                 </tr>
             @endforeach
-            @else
-                <h1 class="text-center">No Replies</h1>
-            @endif
+            
             </tbody>
         </table>
+        @else
+                <h1 class="text-center">No Replies</h1>
+            @endif
 
 @endsection

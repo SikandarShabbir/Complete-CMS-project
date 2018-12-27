@@ -13,11 +13,14 @@
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
-        'role_id' => $faker->numberBetween(1,3),
-        'is_active' => $faker->numberBetween(0,1),
-        'email' => $faker->safeEmail,
-        'password' => bcrypt(str_random(10)),
+        'name' => 'Sikndar Shabbir',
+        // 'role_id' => $faker->numberBetween(1,3),
+        'role_id' => '1',
+        'is_active' => '1',
+        // 'is_active' => $faker->numberBetween(0,1),
+        'email' => 'sikandar@gmail.com',
+        'password' => bcrypt('sikandar123'),
+        // 'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
     ];
 });
@@ -32,8 +35,8 @@ $factory->define(App\Post::class, function (Faker\Generator $faker) {
 });
 $factory->define(App\Role::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->randomElement(['administrator','author','subscriber']),
-
+        'name' => 'administrator'
+        // 'name' => $faker->randomElement(['administrator','author','subscriber']),
     ];
 });
 $factory->define(App\Category::class, function (Faker\Generator $faker) {
@@ -44,7 +47,7 @@ $factory->define(App\Category::class, function (Faker\Generator $faker) {
 });
 $factory->define(App\Photo::class, function (Faker\Generator $faker) {
     return [
-        'file' => 'placeholder.jpg'
+        'file' => 'https://via.placeholder.com/150'
 
     ];
 });
@@ -52,7 +55,7 @@ $factory->define(App\CommentReply::class, function (Faker\Generator $faker) {
     return [
         'is_active' => 1,
         'author' => $faker->name,
-        'photo' => 'placeholder.jpg',
+        'photo' => 'https://via.placeholder.com/150',
         'email' => $faker->safeEmail,
         'body' => $faker->paragraph(1,true),
 
@@ -63,7 +66,7 @@ $factory->define(App\Comment::class, function (Faker\Generator $faker) {
         'post_id' => $faker->numberBetween(1,10),
         'is_active' => 1,
         'author' => $faker->name,
-        'photo' => 'placeholder.jpg',
+        'photo' => 'https://via.placeholder.com/150',
         'email' => $faker->safeEmail,
         'body' => $faker->paragraph(1,true),
 

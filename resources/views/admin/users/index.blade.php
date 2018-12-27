@@ -1,6 +1,6 @@
     @extends('layouts.admin')
     @section('content')
-    <h1>Hello Users</h1>
+    <h1>All Users</h1>
         @if(Session::has('deleted_user'))
             <div class="alert alert-danger">
                 <i>{{ session('deleted_user') }}</i>

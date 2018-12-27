@@ -3,7 +3,8 @@
 
 {{--    {{ var_dump($categories) }}--}}
     <h1> Hi! Create Your Posts :) </h1>
-    <div class="row">
+    {{-- <div class="row"> --}}
+    @include('includes.form_errors')
     {!! Form::open(['method'=>'POST','action'=>'AdminPostsController@store','files'=>true]) !!}
         <div class="form-group">
             {!! Form::label('title','Title:') !!}
@@ -27,6 +28,5 @@
         {!! Form::token() !!}
         {!! Form::close() !!}
         @include('includes.tinyeditor')
-    @include('includes.form_errors')
-    </div>
+    {{-- </div> --}}
 @stop

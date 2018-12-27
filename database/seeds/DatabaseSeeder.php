@@ -20,16 +20,17 @@ class DatabaseSeeder extends Seeder
         DB::table('comment_replies')->truncate();
         DB::table('roles')->truncate();
         DB::table('categories')->truncate();
-        factory(App\User::class, 10)->create()->each(function ($user){
-            $user->posts()->save(factory(App\Post::class)->make());
-        });
-//        factory(App\Post::class, 1)->create();
-        factory(App\Role::class, 3)->create();
-        factory(App\Category::class, 10)->create();
-        factory(App\Photo::class, 1)->create();
+        factory(App\User::class, 1)->create();
+        // ->each(function ($user){
+        //     $user->posts()->save(factory(App\Post::class)->make());
+        // });
+       // factory(App\Post::class, 1)->create();
+        factory(App\Role::class, 1)->create();
+        // factory(App\Category::class, 10)->create();
+        // factory(App\Photo::class, 1)->create();
 
-        factory(App\Comment::class, 10)->create()->each(function ($c){
-            $c->replies()->save(factory(App\CommentReply::class)->make());
-        });
+        // factory(App\Comment::class, 10)->create()->each(function ($c){
+        //     $c->replies()->save(factory(App\CommentReply::class)->make());
+        // });
     }
 }

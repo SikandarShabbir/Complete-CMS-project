@@ -115,11 +115,12 @@ class AdminPostsController extends Controller
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
-//        print_r( $post->photo->file);exit;
+       // print_r( $post->photo->file);exit;
         $str = $post->photo->file;
         $str2 = substr($str, 2);
-//        print_r($str2); exit;
-       if ($str2)
+       // print_r(); exit;
+
+       if ('E:\XAMPP\htdocs\codehacking'. $str2 !== null)
        {
             unlink('E:\XAMPP\htdocs\codehacking'. $str2);
        }

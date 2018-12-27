@@ -20,7 +20,7 @@
 {{--            {{ csrf_field() }}--}}
 {{--            {{ method_field('delete') }}--}}
         <div class="row">
-            @if($photos)
+            @if(count($photos) > 0)
                 <table class="table table-striped">
                     <thead>
                     <tr>
@@ -49,7 +49,10 @@
                     @endforeach
                     </tbody>
                 </table>
-
+                @else
+                <h1 class="text-center" style="margin-top: 200px;">
+                    <strong>No media yet</strong>
+                </h1>
             @endif
         </div>
     </form>
